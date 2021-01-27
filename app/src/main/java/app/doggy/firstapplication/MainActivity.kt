@@ -19,12 +19,14 @@ class MainActivity : AppCompatActivity() {
         //button.setOnTouchListener(OnTouchListener())
     }
 
+    //クリックした時のリスナクラス。
     private inner class OnClickListener: View.OnClickListener{
         override fun onClick(view: View) {
             button.text = "クリックされました!"
         }
     }
 
+    //長押しした時のリスナクラス。
     private inner class OnLongClickListener: View.OnLongClickListener{
         override fun onLongClick(view: View): Boolean {
             button.text = "長押しされました！"
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //タッチイベントに応じて処理を行うリスナクラス。
     private inner  class  OnTouchListener: View.OnTouchListener{
         override fun onTouch(view: View, event: MotionEvent): Boolean {
             when (event.action) {
