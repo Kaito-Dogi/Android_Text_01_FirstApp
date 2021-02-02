@@ -12,22 +12,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //クリックリスナを設定。
-        button.setOnClickListener(OnClickListener())
+        button.setOnClickListener(ClickListener())
         //ロングクリックリスナを設定。
-        button.setOnLongClickListener(OnLongClickListener())
+        button.setOnLongClickListener(LongClickListener())
         //タッチリスナを設定。
-        //button.setOnTouchListener(OnTouchListener())
+        //button.setOnTouchListener(TouchListener())
     }
 
     //クリックした時のリスナクラス。
-    private inner class OnClickListener: View.OnClickListener{
+    private inner class ClickListener: View.OnClickListener{
         override fun onClick(view: View) {
             button.text = "クリックされました!"
         }
     }
 
     //長押しした時のリスナクラス。
-    private inner class OnLongClickListener: View.OnLongClickListener{
+    private inner class LongClickListener: View.OnLongClickListener{
         override fun onLongClick(view: View): Boolean {
             button.text = "長押しされました！"
             return true
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //タッチイベントに応じて処理を行うリスナクラス。
-    private inner  class  OnTouchListener: View.OnTouchListener{
+    private inner  class  TouchListener: View.OnTouchListener{
         override fun onTouch(view: View, event: MotionEvent): Boolean {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
